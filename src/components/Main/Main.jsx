@@ -1,43 +1,86 @@
 import React from "react";
+import {
+	Compass,
+	Lightbulb,
+	MessageSquare,
+	CodeXml,
+	SendHorizontal,
+	ImagePlus,
+	Mic,
+} from "lucide-react";
 
-export default function Main() {
+const Main = () => {
 	return (
-		<div className="relative w-full ">
-			<div className="relative z-0 px-6 bg-white isolate pt-14 lg:px-8">
-				<div className="relative max-w-2xl py-24 mx-auto">
-					<div className="absolute inset-x-0 -top-[4rem] -z-10 transform-gpu overflow-hidden blur-3xl md:-top-[10rem]">
-						<svg
-							className="relative left-[calc(50%-11rem)] -z-10 h-[21.1875rem] max-w-none -translate-x-1/2 rotate-[30deg] sm:left-[calc(50%-30rem)] sm:h-[42.375rem]"
-							viewBox="0 0 1155 678"
-							xmlns="http://www.w3.org/2000/svg"
-						>
-							<path
-								fill="url(#45de2b6b-92d5-4d68-a6a0-9b9b2abad533)"
-								fillOpacity=".3"
-								d="M317.219 518.975L203.852 678 0 438.341l317.219 80.634 204.172-286.402c1.307 132.337 45.083 346.658 209.733 145.248C936.936 126.058 882.053-94.234 1031.02 41.331c119.18 108.451 130.68 295.337 121.53 375.223L855 299l21.173 362.054-558.954-142.079z"
-							/>
-							<defs>
-								<linearGradient
-									id="45de2b6b-92d5-4d68-a6a0-9b9b2abad533"
-									x1="1155.49"
-									x2="-78.208"
-									y1=".177"
-									y2="474.645"
-									gradientUnits="userSpaceOnUse"
-								>
-									<stop stopColor="#9089FC" />
-									<stop offset={1} stopColor="#FF80B5" />
-								</linearGradient>
-							</defs>
-						</svg>
-					</div>
-					<div className="text-center">
-						<h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-							Lorem ipsum dolor sit amet consectetur dicta.
-						</h1>
+		<div className="px-4 py-6 mx-auto max-w-7xl sm:px-6 lg:px-8">
+			<div className="max-w-xl mx-auto text-center">
+				<div className="mx-auto inline-flex rounded-full bg-gray-100 px-4 py-1.5">
+					<p className="text-xs font-semibold tracking-widest text-black uppercase">
+						Gemini 2.0
+					</p>
+				</div>
+				<h2 className="mt-6 text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-5xl">
+					Hello, Dev.👋
+				</h2>
+				<p className="mt-4 text-3xl leading-relaxed text-gray-600">
+					How can I help you today?
+				</p>
+			</div>
+			<div className="grid grid-cols-1 mt-12 text-center gap-y-8 sm:grid-cols-2 sm:gap-12 lg:grid-cols-4 ">
+				<div className="w-48 h-56 px-4 py-8 duration-500 bg-white shadow-xl rounded-2xl hover:scale-105 ">
+					<span className="flex items-center justify-center w-12 h-12 mx-auto bg-gray-100 rounded-full">
+						<Compass className="text-gray-700 h-7 w-7" />
+					</span>
+					<p className="mt-4 mb-4 text-sm text-gray-600 ">
+						Suggest beautiful places to see on an upcoming road trip
+					</p>
+				</div>
+				<div className="w-48 h-56 px-4 py-8 duration-500 bg-white shadow-xl rounded-2xl hover:scale-105 ">
+					<span className="flex items-center justify-center w-12 h-12 mx-auto bg-gray-100 rounded-full">
+						<Lightbulb className="text-gray-700 h-7 w-7" />
+					</span>
+					<p className="mt-4 mb-4 text-sm text-gray-600 ">
+						Briefly summarize this concept: urban planing
+					</p>
+				</div>
+				<div className="w-48 h-56 px-4 py-8 duration-500 bg-white shadow-xl rounded-2xl hover:scale-105">
+					<span className="flex items-center justify-center w-12 h-12 mx-auto bg-gray-100 rounded-full">
+						<MessageSquare className="text-gray-700 h-7 w-7" />
+					</span>
+					<p className="mt-4 mb-4 text-sm text-gray-600 ">
+						Brainstorm bonding activities for work retreat
+					</p>
+				</div>
+				<div className="w-48 h-56 px-4 py-8 duration-500 bg-white shadow-xl rounded-2xl hover:scale-105">
+					<span className="flex items-center justify-center w-12 h-12 mx-auto bg-gray-100 rounded-full">
+						<CodeXml className="text-gray-700 h-7 w-7" />
+					</span>
+					<p className="mt-4 mb-4 text-sm text-gray-600 ">
+						Tell me about React js and React native
+					</p>
+				</div>
+			</div>
+
+			{/* Input */}
+			<div className="w-full py-2 mx-auto md:mt-24">
+				<div className="flex items-center justify-center gap-4 px-4 py-4 bg-white rounded-full shadow-xl md:flex-row md:justify-between">
+					<input
+						type="text"
+						placeholder="Enter a prompt here"
+						className="w-full px-2 py-2 text-base text-gray-800 bg-transparent outline-none"
+					/>
+					<div className="flex gap-4">
+						<ImagePlus />
+						<Mic />
+						<SendHorizontal />
 					</div>
 				</div>
+				<p className="mt-4 text-xs text-center text-gray-600">
+					Gemini may display inaccurate info, including about people, so
+					double-check its responses. Your privacy and Gemini Apps
+				</p>
 			</div>
 		</div>
 	);
-}
+};
+
+export default Main;

@@ -3,10 +3,10 @@ import Sidebar from "./components/Sidebar/Sidebar";
 import Main from "./components/Main/Main";
 
 const App = () => {
-	return ( 
+	return (
 		<div className="flex">
 			<Sidebar />
-			
+			<Main/>
 		</div>
 	);
 };
