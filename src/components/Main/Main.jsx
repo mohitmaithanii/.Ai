@@ -114,11 +114,11 @@ const Main = () => {
 						className="w-full px-2 text-sm text-gray-800 bg-transparent outline-none sm:py-2 sm:text-base"
 					/>
 					<div className="flex gap-2 sm:gap-4">
-						
-							<ImagePlus className="w-5 h-5" />
-							<Mic className="w-5 h-5" />
-						
-						<SendHorizontal className="w-5 h-5" onClick={() => onSent()} />
+						<ImagePlus className="w-5 h-5" />
+						<Mic className="w-5 h-5" />
+						{input ? (
+							<SendHorizontal className="w-5 h-5" onClick={() => onSent()} />
+						) : null}
 					</div>
 				</div>
 				<p className="mt-4 text-xs text-center text-gray-600">
