@@ -19,7 +19,7 @@ export default function Sidebar() {
 	};
 
 	return (
-		<aside className="inline-flex flex-col items-center justify-between min-h-screen px-2 py-8 duration-700 bg-white border-r sm:px-4">
+		<aside className="inline-flex flex-col items-center justify-between min-h-screen px-2 py-8 duration-700 bg-gray-100  border-r sm:px-4">
 			<nav className="flex flex-col flex-1 space-y-6 ">
 				<a
 					className="px-4"
