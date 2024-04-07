@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import { useContext, useState } from "react";
 import { Context } from "../context/Context";
 import {
 	Plus,
@@ -20,12 +20,12 @@ export default function Sidebar() {
 
 	return (
 		<aside className="hidden lg:block">
-			<div className=" fixed h-full w-40  top-0 ">
-				<section className="text-black bg-white flex-col absolute h-screen top-0 left-0 py-5 px-3  flex  justify-between">
-					<div className="gap-4 flex flex-col">
+			<div className="fixed top-0 w-40 h-full ">
+				<section className="absolute top-0 left-0 flex flex-col justify-between h-screen px-3 py-5 text-black bg-white">
+					<div className="flex flex-col gap-4">
 						<AlignLeft
 							onClick={() => setIsMenuOpen((prev) => !prev)}
-							className="cursor-pointer ml-4"
+							className="ml-4 cursor-pointer"
 						/>
 						<a
 							onClick={() => newChat()}
