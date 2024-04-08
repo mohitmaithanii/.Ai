@@ -4,6 +4,7 @@ import {
 	HarmBlockThreshold,
 } from "@google/generative-ai";
 
+// Set the name of the model and the API key
 const MODEL_NAME = "gemini-1.0-pro-001";
 const API_KEY = "AIzaSyACDluTkiYSUqS5R5jb-Hr3tp-OQ0_7GY0";
 
@@ -43,6 +44,7 @@ async function runChat(prompt) {
 		history: [],
 	});
 
+	// Send the prompt to the model and get the response
 	const result = await chat.sendMessage(prompt);
 	const response = result.response;
 	console.log(response.text());

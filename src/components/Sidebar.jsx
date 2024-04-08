@@ -13,8 +13,11 @@ export default function Sidebar() {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 	const { onSent, prevPrompts, setRecentPrompt, newChat } = useContext(Context);
 
+	// Function to load prompt and send it to server
 	const loadPrompt = async (prompt) => {
+		// Set recent prompt using setRecentPrompt function from Context
 		setRecentPrompt(prompt);
+		// Send prompt to server using onSent function from Context
 		await onSent(prompt);
 	};
 
