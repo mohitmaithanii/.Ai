@@ -21,7 +21,7 @@ export default function Sidebar() {
 	return (
 		<aside className="hidden lg:block">
 			<div className="fixed top-0 w-40 h-full ">
-				<section className="absolute top-0 left-0 flex flex-col justify-between h-screen px-3 py-5 text-black bg-white">
+				<section className="absolute top-0 left-0 flex flex-col justify-between h-screen px-3 py-5 text-black bg-gray-100">
 					<div className="flex flex-col gap-4">
 						<AlignLeft
 							onClick={() => setIsMenuOpen((prev) => !prev)}

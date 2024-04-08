@@ -8,7 +8,7 @@ const Main = () => {
 	const { recentPrompt, showResult, loading, resultData } = useContext(Context);
 
 	return (
-		<div className="w-full h-screen bg-gray-100 ">
+		<div className="w-full h-screen bg-white ">
 			<div className="mx-auto max-w-7xl lg:px-8">
 				<div className="flex flex-col justify-center px-6 lg:px-16">
 					{/* nav */}
