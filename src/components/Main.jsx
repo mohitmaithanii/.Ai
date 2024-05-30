@@ -8,17 +8,17 @@ const Main = () => {
 	const { recentPrompt, showResult, loading, resultData } = useContext(Context);
 
 	return (
-		<div className="w-full h-screen bg-white ">
+		<div className="w-full h-screen bg-[#000]">
 			<div className="mx-auto max-w-7xl lg:px-8">
 				<div className="flex flex-col justify-center px-6 lg:px-16">
 					{/* nav */}
-					<div className="flex items-center justify-between py-4 ">
-						<span className="text-xl font-bold cursor-pointer sm:text-2xl">
+					<div className="flex items-center justify-between py-4">
+						<span className="text-xl font-bold cursor-pointer sm:text-2xl text-[#fff]">
 							.Ai🚀
 						</span>
 						<div className="flex items-center justify-center gap-3">
 							<a href="https://github.com/mohitmaithanii/" target="_blank">
-								<span className="flex items-center justify-center w-8 h-8 text-white bg-black rounded-full hover:bg-gray-200 hover:duration-500 hover:text-black">
+								<span className="flex items-center justify-center w-8 h-8 text-[#000] rounded-full bg-[#fff] hover:bg-gray-300 hover:duration-500 hover:text-black">
 									<Github className="w-5 h-5" />
 								</span>
 							</a>
@@ -26,7 +26,7 @@ const Main = () => {
 								href="https://www.linkedin.com/in/mohitmaithanii/"
 								target="_blank"
 							>
-								<span className="flex items-center justify-center w-8 h-8 text-white bg-black rounded-full hover:bg-gray-200 hover:duration-500 hover:text-black">
+								<span className="flex items-center justify-center w-8 h-8 text-[#000] rounded-full bg-[#fff] hover:bg-gray-300 hover:duration-500 hover:text-black">
 									<Linkedin className="w-5 h-5" />
 								</span>
 							</a>
@@ -35,11 +35,11 @@ const Main = () => {
 					{!showResult ? (
 						<div className="">
 							{/* title */}
-							<h1 className="max-w-4xl mt-6 text-4xl font-bold tracking-tight text-black sm:text-7xl lg:text-8xl">
-								Hello, <span className="text-gray-400">Dev</span>.
+							<h1 className="max-w-4xl mt-6 text-4xl font-bold tracking-tight text-[#fff] sm:text-7xl lg:text-8xl">
+								Hello, <span className="text-[#999]">Dev</span>.
 							</h1>
-							<p className="max-w-3xl mt-4 text-xl text-gray-700 sm:text-4xl lg:text-5xl">
-								How can I help you today ?
+							<p className="max-w-3xl mt-4 text-xl text-[#888] sm:text-4xl lg:text-5xl">
+								How can I help you today?
 							</p>
 
 							{/* Card */}
@@ -47,14 +47,14 @@ const Main = () => {
 						</div>
 					) : (
 						/* Output Screen */
-						<div className="flex flex-col items-start">
+						<div className="flex flex-col items-start w-full">
 							<div className="flex items-center gap-4 mt-4 mb-4">
-								<span className="flex items-center justify-center w-8 h-8 text-black bg-white rounded-full ">
+								<span className="flex items-center justify-center w-8 h-8 text-[#fff] bg-[#222] rounded-full">
 									<User className="w-5 h-5" />
 								</span>
-								<p className="py-2 text-sm font-semibold ">{recentPrompt}</p>
+								<p className="py-2 text-sm font-semibold">{recentPrompt}</p>
 							</div>
-							<div className="w-full mx-auto overflow-y-scroll bg-white shadow-2xl h-[350px] rounded-xl no-scrollbar px-2 sm:h-[350px] lg:h-[330px] xl:h-[430px] py-4 ">
+							<div className="w-full mx-auto overflow-y-scroll bg-[#222] shadow-2xl h-[350px] rounded-xl no-scrollbar px-2 sm:h-[350px] lg:h-[330px] xl:h-[430px] py-4 text-[#fff]">
 								<div className="flex items-center px-3">
 									<div className="px-1">
 										<span className="inline-block w-3 h-3 bg-red-500 rounded-full cursor-pointer sm:h-4 sm:w-4"></span>
