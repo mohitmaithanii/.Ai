@@ -6,15 +6,17 @@ Develop an AI-powered chat interface leveraging the **Google Gemini API**, seaml
 ## 📸 Screenshots
 - **FUll view**
   
-![full website](https://github.com/mohitmaithanii/.Ai/assets/126086791/9b6a258b-f012-4e8a-8696-cf91d3d8e329)
+![full view](https://github.com/mohitmaithanii/.Ai/assets/126086791/b8495380-be42-47e5-b625-5ce267eed06e)
 
 - **With chat**
   
-![with chat](https://github.com/mohitmaithanii/.Ai/assets/126086791/3d0b9825-6a47-4278-bf9c-92b51ec8da9e)
+![with chat](https://github.com/mohitmaithanii/.Ai/assets/126086791/910264b0-990c-416d-bf19-512408ab4988)
+
   
 - **In Moble device**
-  
-![mobile device](https://github.com/mohitmaithanii/.Ai/assets/126086791/8908b2a0-345e-4ee3-bad3-f7416c38dfa5)
+
+![mobile view](https://github.com/mohitmaithanii/.Ai/assets/126086791/da9e62e5-46c5-4382-acf6-c236c8bc8e7f)
+
 
 ## 🛠️ Tech Stack
 
