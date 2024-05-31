@@ -1,53 +1,50 @@
 import { Compass, Lightbulb, MessageSquare, CodeXml } from "lucide-react";
 
-const Card = () => {
+// Component for rendering clickable cards with icons and text
+const Card = ({ onCardClick }) => {
+	// Data for each card containing icon and text
+	const items = [
+		{
+			icon: <Compass className="text-purple-400 sm:h-10 sm:w-10" />,
+			text: "Beautiful places to see on an upcoming trip",
+		},
+		{
+			icon: <Lightbulb className="text-orange-400 sm:h-10 sm:w-10" />,
+			text: "Briefly summarize this concept: urban planning",
+		},
+		{
+			icon: <MessageSquare className="text-yellow-400 sm:h-10 sm:w-10" />,
+			text: "Brainstorm bonding activities for work retreat",
+		},
+		{
+			icon: <CodeXml className="text-green-400 sm:h-10 sm:w-10" />,
+			text: "Tell me about React js and React native",
+		},
+	];
+
 	return (
-		<>
-			<div className="flex items-center justify-center mt-6 mb-4 xl:mt-28 lg:justify-start ">
-				<div className="grid grid-cols-1 text-center gap-y-2 sm:gap-y-2 sm:grid-cols-2 sm:gap-12 lg:grid-cols-4 ">
-					<div className="flex px-6 py-8 duration-500 bg-white shadow-xl cursor-pointer lg:w-48 lg:h-48 rounded-2xl hover:scale-105 h-14 sm:h-28">
-						<div className="flex items-center justify-between gap-4 text-start lg:flex-col lg:text-center ">
-							<span>
-								<Compass className="text-purple-400 sm:h-10 sm:w-10 " />
-							</span>
-							<p className="mt-4 mb-4 text-xs font-semibold text-gray-600 sm:text-sm">
-								Beautiful places to see on an upcoming trip
+		<div className="flex items-center justify-center lg:justify-start">
+			{/* Grid layout for displaying cards */}
+			<div className="grid grid-cols-1 gap-4 text-center sm:grid-cols-2 lg:grid-cols-4">
+				{items.map((item, index) => (
+					<div
+						key={index}
+						// Clickable card with border and hover effect
+						className="flex px-6 py-8 duration-500 border border-[#555] cursor-pointer lg:w-48 lg:h-48 rounded-2xl hover:bg-[#222] h-14 sm:h-28"
+						// Handle click event to pass text to parent component
+						onClick={() => onCardClick(item.text)}
+					>
+						{/* Icon and text content */}
+						<div className="flex items-center justify-between gap-4 text-start lg:flex-col lg:text-center">
+							<span>{item.icon}</span>
+							<p className="mt-4 mb-4 text-xs font-semibold text-[#999] sm:text-sm">
+								{item.text}
 							</p>
 						</div>
 					</div>
-					<div className="flex px-4 py-8 duration-500 bg-white shadow-xl cursor-pointer lg:w-48 lg:h-48 rounded-2xl hover:scale-105 h-14 sm:h-28 ">
-						<div className="flex items-center justify-between gap-4 text-start lg:flex-col lg:text-center ">
-							<span>
-								<Lightbulb className="text-orange-400 sm:h-10 sm:w-10 " />
-							</span>
-							<p className="mt-4 mb-4 text-xs font-semibold text-gray-600 sm:text-sm">
-								Briefly summarize this concept: urban planing
-							</p>
-						</div>
-					</div>
-					<div className="flex px-4 py-8 duration-500 bg-white shadow-xl cursor-pointer lg:w-48 lg:h-48 rounded-2xl hover:scale-105 h-14 sm:h-28">
-						<div className="flex items-center justify-between gap-4 text-start lg:flex-col lg:text-center ">
-							<span>
-								<MessageSquare className="text-yellow-400 sm:h-10 sm:w-10 " />
-							</span>
-							<p className="mt-4 mb-4 text-xs font-semibold text-gray-600 sm:text-sm">
-								Brainstorm bonding activities for work retreat
-							</p>
-						</div>
-					</div>
-					<div className="flex px-4 py-8 duration-500 bg-white shadow-xl cursor-pointer lg:w-48 lg:h-48 rounded-2xl hover:scale-105 h-14 sm:h-28 ">
-						<div className="flex items-center justify-between gap-4 text-start lg:flex-col lg:text-center ">
-							<span>
-								<CodeXml className="text-green-400 sm:h-10 sm:w-10 " />
-							</span>
-							<p className="mt-4 mb-4 text-xs font-semibold text-gray-600 sm:text-sm">
-								Tell me about React js and React native
-							</p>
-						</div>
-					</div>
-				</div>
+				))}
 			</div>
-		</>
+		</div>
 	);
 };
 

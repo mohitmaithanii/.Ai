@@ -1,10 +1,12 @@
-import { useState } from "react";
-import { createContext } from "react";
+import { useState, createContext } from "react";
 import runChat from "../config/gemini";
 
+// Create a context to manage state and functions
 export const Context = createContext();
 
+// Context Provider component
 const ContextProvider = (props) => {
+	// State variables
 	const [input, setInput] = useState("");
 	const [recentPrompt, setRecentPrompt] = useState("");
 	const [prevPrompts, setPrevPrompts] = useState([]);
@@ -12,38 +14,42 @@ const ContextProvider = (props) => {
 	const [loading, setLoading] = useState(false);
 	const [resultData, setResultData] = useState("");
 
-	// Function to delay the display of each word in the result data
+	// Function to delay rendering paragraphs
 	const delayPara = (index, nextWord) => {
 		setTimeout(() => {
 			setResultData((prev) => prev + nextWord);
 		}, 75 * index);
 	};
 
-	// Function to reset the chat
+	// Function to start a new chat session
 	const newChat = () => {
 		setLoading(false);
 		setShowResult(false);
+		setRecentPrompt("");
+		setResultData("");
 	};
 
-	// Function to handle sending a prompt to the chat model
+	// Function to handle sending a prompt
 	const onSent = async (prompt) => {
 		setResultData("");
-		// Reset the result data and set loading status to true
 		setLoading(true);
 		setShowResult(true);
 
-		// Send the prompt to the chat model and get the response
 		let response;
 		if (prompt !== undefined) {
-			response = await runChat(prompt);
 			setRecentPrompt(prompt);
+			if (!prevPrompts.includes(prompt)) {
+				setPrevPrompts((prev) => [...prev, prompt]);
+			}
+			response = await runChat(prompt);
 		} else {
-			setPrevPrompts((prev) => [...prev, input]);
+			if (!prevPrompts.includes(input)) {
+				setPrevPrompts((prev) => [...prev, input]);
+			}
 			setRecentPrompt(input);
 			response = await runChat(input);
 		}
 
-		// Format the response by splitting it into an array and adding bold tags to every other element
 		let responseArray = response.split("**");
 		let newResponse = "";
 		for (let i = 0; i < responseArray.length; i++) {
@@ -54,7 +60,6 @@ const ContextProvider = (props) => {
 			}
 		}
 
-		// Split the formatted response into an array of words and display each word with a delay
 		let newResponse2 = newResponse.split("*").join("</br>");
 		let newResponseArray = newResponse2.split(" ");
 		for (let i = 0; i < newResponseArray.length; i++) {
@@ -62,12 +67,17 @@ const ContextProvider = (props) => {
 			delayPara(i, nextWord + " ");
 		}
 
-		// Set loading status to false and reset the input
 		setLoading(false);
 		setInput("");
 	};
 
-	// Object containing the shared state and functions
+	// Function to clear chat history
+	const clearHistory = () => {
+		setPrevPrompts([]);
+		setRecentPrompt("");
+	};
+
+	// Context value
 	const contextValue = {
 		prevPrompts,
 		setPrevPrompts,
@@ -80,7 +90,10 @@ const ContextProvider = (props) => {
 		input,
 		setInput,
 		newChat,
+		clearHistory,
 	};
+
+	// Return the context provider with the context value
 	return (
 		<Context.Provider value={contextValue}>{props.children}</Context.Provider>
 	);
